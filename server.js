@@ -28,7 +28,7 @@ console.log("App listening on port " + port);
 
 //Redis
 
-const client = redis.createClient();
+const client = redis.createClient(6379 ,'10.110.44.140');
 
 client.on("error", function(error) {
   console.error(error);
