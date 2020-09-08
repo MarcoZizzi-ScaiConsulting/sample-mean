@@ -8,6 +8,7 @@ var paths = require('./config/paths');                            // load the pa
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var redis = require('redis')
 
 // Configuration
 mongoose.connect(database.remoteUrl);                         // connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
@@ -24,3 +25,14 @@ require('./app/routes.js')(app);
 // Start listening
 app.listen(port);
 console.log("App listening on port " + port);
+
+//Redis
+
+const client = redis.createClient();
+
+client.on("error", function(error) {
+  console.error(error);
+});
+
+client.set("key", "value", redis.print);
+client.get("key", redis.print);
