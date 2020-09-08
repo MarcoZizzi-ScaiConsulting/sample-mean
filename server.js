@@ -35,4 +35,6 @@ client.on("error", function(error) {
 });
 
 client.set("key", "value", redis.print);
-client.get("key", redis.print);
+var value = client.get("key", redis.print);
+
+console.log("Get key redis: " + value)
