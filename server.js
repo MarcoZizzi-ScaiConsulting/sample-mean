@@ -27,8 +27,14 @@ app.listen(port);
 console.log("App listening on port " + port);
 
 //Redis
-
-const client = redis.createClient(6379 ,'10.110.44.140');
+const client = redis.createClient({
+          host : '10.110.44.140',
+          password: tpNgrZy7BK,                                                                                                                                                           
+});                               
+                                  
+client.on('connect', () => {   
+ console.log("connected to redis on 10.110.44.140:6379");
+});  
 
 client.on("error", function(error) {
   console.error(error);
