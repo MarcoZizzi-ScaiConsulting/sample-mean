@@ -28,7 +28,7 @@ console.log("App listening on port " + port);
 
 //Redis
 const client = redis.createClient({
-          host : '10.110.44.140',
+          host : '172.18.0.22',
           password: 'tpNgrZy7BK',                                                                                                                                                           
 });                               
                                   
