@@ -26,14 +26,18 @@ var redis = require('redis')
 app.listen(port);
 console.log("App listening on port " + port);
 
+
+var ipAddress = '192.168.1.16';
 //Redis
+
+console.log("connecting to Redis Server on Master Node");
 const client = redis.createClient({
-          host : '172.18.0.22',
-          password: 'tpNgrZy7BK',                                                                                                                                                           
+          host : ipAddress,
+          password: 'A1hLnZU17z',                                                                                                                                                           
 });                               
                                   
 client.on('connect', () => {   
- console.log("connected to redis on 10.110.44.140:6379");
+ console.log("connected to redis on "+ipAddress+":6379");
 });  
 
 client.on("error", function(error) {
