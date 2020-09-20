@@ -27,7 +27,7 @@ app.listen(port);
 console.log("App listening on port " + port);
 
 
-var ipAddress = '10.43.110.13';
+var ipAddress = '10.42.0.139';
 //Redis
 
 console.log("connecting to Redis Server on Master Node");
